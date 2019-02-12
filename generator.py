@@ -36,7 +36,7 @@ def generator(data, lookback, delay, min_index, max_index, shuffle=False, batch_
         else:
             if i + batch_size >= max_index:
                 i = min_index + lookback
-            rows = np.arange(i, min(i + batch_size, max_index))
+            rows = np.arange(i, min(i + batch_size, max_index  + 1))
             i += len(rows)
         samples = np.zeros((len(rows), lookback // step, data.shape[-1]))
         targets = np.zeros((len(rows),data.shape[-1]))
