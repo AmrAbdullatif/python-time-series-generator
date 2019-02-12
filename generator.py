@@ -55,7 +55,7 @@ step = 1
 delay = 1
 batch_size = 128
 
-train_gen = generator(xp,
+train_gen = generator(data_ex,
     lookback=lookback,
     delay=delay,
     min_index=0,
@@ -64,7 +64,7 @@ train_gen = generator(xp,
     step=step,
     batch_size=batch_size)
 
-validation_gen = generator(xp,
+validation_gen = generator(data_ex,
     lookback=lookback,
     delay=delay,
     min_index=51,
@@ -72,7 +72,7 @@ validation_gen = generator(xp,
     step=step,
     batch_size=batch_size)
 
-test_gen = generator(xp,
+test_gen = generator(data_ex,
     lookback=lookback,
     delay=delay,
     min_index=76,
@@ -81,8 +81,8 @@ test_gen = generator(xp,
     batch_size=batch_size)
     
 # Access the data
-xi,yo = next(train_gen)
+xi, yo = next(train_gen)
 # xi shape is (128, 10, 3)  
-# yo shape is (128,3) 
+# yo shape is (128, 3) 
 
 
