@@ -32,7 +32,7 @@ def generator(data, lookback, delay, min_index, max_index, shuffle=False, batch_
     i = min_index + lookback
     while 1:
         if shuffle:
-            rows = np.random.randint(min_index + lookback, max_index, size=batch_size)
+            rows = np.random.randint(min_index + lookback, max_index + 1, size=batch_size)
         else:
             if i + batch_size >= max_index:
                 i = min_index + lookback
